@@ -1,27 +1,25 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="#ccc"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/image_view_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="12dp" />
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_below="@+id/image_view_banner" />
 
-        <Button
-            android:id="@+id/button_submit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Get Data" />
-
-        <TextView
-            android:id="@+id/text_view_data"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/button_submit"
-            android:textSize="26dp" />
-
-
-    </RelativeLayout>
-
-</ScrollView>
+</RelativeLayout>
