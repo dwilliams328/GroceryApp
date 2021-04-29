@@ -1,5 +1,7 @@
 package com.example.httprequest.app
 
+import com.example.httprequest.models.Category
+
 class Endpoints {
 
     companion object{
@@ -12,6 +14,10 @@ class Endpoints {
 
         fun getCategory(): String{
             return "${Config.BASE_URL + URL_CATEGORY}"
+        }
+
+        fun getImage(category: Category): String{
+            return "${Config.IMAGE_URL + category.catImage}"
         }
 
         fun getSubCategoryByCatId(catId: Int):String{

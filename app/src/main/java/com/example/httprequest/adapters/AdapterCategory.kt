@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.httprequest.R
 import com.example.httprequest.activities.SubCategoryActivity
+import com.example.httprequest.app.Endpoints
 import com.example.httprequest.models.Category
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.row_category_adapter.view.*
@@ -48,7 +49,7 @@ class AdapterCategory (var mContext: Context): RecyclerView.Adapter<AdapterCateg
             //Load Respective Category Image in itemView
             Picasso
                 .get()
-                .load("http://rjtmobile.com/grocery/images/${category.catImage}")
+                .load(Endpoints.getImage(category))
                 .into(itemView.image_view_category)
 
             itemView.setOnClickListener {
@@ -58,6 +59,5 @@ class AdapterCategory (var mContext: Context): RecyclerView.Adapter<AdapterCateg
             }
 
         }
-
     }
 }

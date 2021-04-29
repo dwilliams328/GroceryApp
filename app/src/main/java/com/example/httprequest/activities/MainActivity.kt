@@ -12,6 +12,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.httprequest.R
 import com.example.httprequest.adapters.AdapterCategory
+import com.example.httprequest.app.Endpoints
 import com.example.httprequest.models.CategoryResponse
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
@@ -51,21 +52,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun getData() {
 
+        // Instantiate the Volley
         var requestQueue = Volley.newRequestQueue(this)
+        // request object pass or fail.
         var request = StringRequest(
             Request.Method.GET,
-            "http://grocery-second-app.herokuapp.com/api/category",
-            Response.Listener {
+            Endpoints.getCategory(),
+            {
                 var gson = Gson()
                 var categoryResponse = gson.fromJson(it, CategoryResponse::class.java)
                 adapterCategory.setData(categoryResponse.data)
                 progress_bar.visibility = View.GONE
             },
-            Response.ErrorListener {
+            {
                 Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
                 Log.d("abc", it.message.toString())
             }
         )
+        // Add request to Volley RequestQueue for network operations
         requestQueue.add(request)
     }
 

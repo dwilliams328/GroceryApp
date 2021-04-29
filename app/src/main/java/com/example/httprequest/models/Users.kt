@@ -1,12 +1,20 @@
-package com.example.httprequest.models
-
 import java.io.Serializable
 
+data class Users(
+    val token: String,
+    val user: User
+)
+
 data class User(
-    var name: String,
-    var email: String
+    val __v: Int?,
+    val _id: String?,
+    val createdAt: String?,
+    val email: String?,
+    val firstName: String?,
+    val mobile: String?,
+    val password: String?
 ): Serializable{
-    companion object{
-        const val KEY_USER = "user"
-    }
+        companion object{
+            var KEY_USER = "key_user"
+        }
 }

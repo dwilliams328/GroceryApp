@@ -25,6 +25,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        //submit requested new user info to custom api
         button_register.setOnClickListener {
             var firstName = edit_text_fname.text.toString()
             var email = edit_text_email.text.toString()
@@ -57,6 +58,12 @@ class RegisterActivity : AppCompatActivity() {
             requestQueue.add(jsonRequest)
 
             var intent = Intent(applicationContext,LoginActivity::class.java)
+
+            startActivity(intent)
+        }
+
+        button_existing_user.setOnClickListener {
+            var intent = Intent(this,LoginActivity::class.java)
 
             startActivity(intent)
         }
