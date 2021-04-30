@@ -19,7 +19,7 @@ class SessionManager(var mContext: Context) {
 
     fun register(user: User){
         //alreadyUser() If Registerer attempts to added already existing user, then notify
-        //and intent to login screen for credentials.
+        //and intent to login screen for credentials. logic needed.
 
 
         //If User Doesn't exist then add to api

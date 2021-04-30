@@ -46,6 +46,7 @@ class AdapterCategory (var mContext: Context): RecyclerView.Adapter<AdapterCateg
         //Bind Data with Item
         fun bind(category: Category){
             itemView.text_view_category_name.text = category.catName
+
             //Load Respective Category Image in itemView
             Picasso
                 .get()
@@ -57,7 +58,6 @@ class AdapterCategory (var mContext: Context): RecyclerView.Adapter<AdapterCateg
 
                 mContext.startActivity(intent)
             }
-
         }
     }
 }

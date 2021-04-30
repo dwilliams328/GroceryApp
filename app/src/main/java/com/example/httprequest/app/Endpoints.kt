@@ -16,6 +16,10 @@ class Endpoints {
             return "${Config.BASE_URL + URL_CATEGORY}"
         }
 
+        fun getSubCategory(): String{
+            return "${Config.BASE_URL + URL_SUB_CATEGORY}"
+        }
+
         fun getImage(category: Category): String{
             return "${Config.IMAGE_URL + category.catImage}"
         }
