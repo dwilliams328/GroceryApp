@@ -40,7 +40,6 @@ class Endpoints {
             return "${Config.BASE_URL + URL_LOGIN}"
         }
 
-
     }
 
 }
